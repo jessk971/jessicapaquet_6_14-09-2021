@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
+const sauce = require('./models/sauce');
 
 mongoose.connect('mongodb+srv://jessk971:Madinina971@cluster0.ergo0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
         useNewUrlParser: true,
