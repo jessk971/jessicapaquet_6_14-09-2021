@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
 const Sauce = require('./models/sauce');
+const sauceRoutes = require('./routes/sauce');
+
 
 
 mongoose.connect('mongodb+srv://jessk971:Madinina971@cluster0.ergo0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
