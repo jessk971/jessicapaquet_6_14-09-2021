@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
-const sauce = require('./models/sauce');
+const Sauce = require('./models/sauce');
+
 
 mongoose.connect('mongodb+srv://jessk971:Madinina971@cluster0.ergo0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
         useNewUrlParser: true,
@@ -25,18 +26,21 @@ app.use(bodyParser.json());
 
 
 
-app.use((req, res, next) => {
-    res.status(201);
-    next();
+app.post('/api/sauce', (req, res, next) => {
+    delete req.body._id;
+    const sauce = new Sauce({
+        ...req.body
+    });
+    sauce.save()
+        .then(() => res.status(201).json({ message: 'Objet enregistré !' }))
+        .catch(error => res.status(400).json({ error }));
 });
 
-app.use((req, res, next) => {
-    res.json({ message: 'Votre requête a bien été reçue !' });
-    next();
+app.get('/api/sauce', (req, res, next) => {
+    Sauce.find()
+        .then(things => res.status(200).json(sauce))
+        .catch(error => res.status(400).json({ error }));
 });
 
-app.use((req, res, next) => {
-    console.log('Réponse envoyée avec succès !');
-});
 
 module.exports = app;
