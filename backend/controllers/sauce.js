@@ -80,7 +80,7 @@ exports.deleteSauce = (req, res, next) => {
     );
 };
 
-exports.getAllSauce = (req, res, next) => {
+exports.getAllSauces = (req, res, next) => {
     Sauce.find().then(
         (things) => {
             res.status(200).json(sauce);
