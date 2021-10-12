@@ -17,7 +17,7 @@ exports.createSauce = (req, res, next) => {
     console.log(sauce);
 };
 
-exports.getOneSauce = (req, res, next) => {
+exports.getOneSauce = (req, res, next) => { // récupération d'une seul sauce 
     Sauce.findOne({ _id: req.params.id })
         .then(sauce => res.status(200).json(sauce))
         .catch(error => res.status(404).json({ error }))
@@ -46,7 +46,7 @@ exports.deleteSauce = (req, res, next) => {
         .catch(error => res.status(500).json({ error }));
 };
 
-exports.getAllSauce = (req, res, next) => {
+exports.getAllSauce = (req, res, next) => { // récuprération de toutes les sauces 
     Sauce.find()
         .then(sauce => res.status(200).json(sauce))
         .catch(error => res.status(400).json({ error }))
