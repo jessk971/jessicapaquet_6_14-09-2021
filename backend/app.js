@@ -8,15 +8,15 @@ const path = require('path');
 const helmet = require("helmet");
 
 
-
-mongoose.connect('mongodb+srv://jessk971:Madinina971@cluster0.ergo0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+require('dotenv').config();
+mongoose.connect(process.env.MY_APP_SECRET, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-
+console.log(process.env.MY_APP_SECRET)
 
 // CORS - partage de ressources entre serveurs
 app.use((req, res, next) => {
