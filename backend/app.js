@@ -6,6 +6,8 @@ const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 const path = require('path');
 const helmet = require("helmet");
+const mongoSanitize = require('express-mongo-sanitize');
+
 
 
 require('dotenv').config();
@@ -28,6 +30,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
+app.use(mongoSanitize());
 app.use(helmet());
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
