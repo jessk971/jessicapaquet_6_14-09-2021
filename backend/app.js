@@ -18,7 +18,7 @@ mongoose.connect(process.env.MY_APP_SECRET, {
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-console.log(process.env.MY_APP_SECRET)
+
 
 // CORS - partage de ressources entre serveurs
 app.use((req, res, next) => {
