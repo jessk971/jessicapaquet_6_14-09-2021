@@ -4,24 +4,21 @@ Projet 6 développeur web d'OpenClassrooms : Construisez une API sécurisée pou
 
 ## Frontend ##
 
-Le projet a été généré avec Angular CLI version 7.0.2. Pour le faire fonctionner, installer node-sass à part. Après, se positionner sur le dossier frontend à partir du projet. >cd frontend
+Le projet a été généré avec Angular CLI version 7.0.2. Pour le faire fonctionner, installer node-sass à part. Après, se positionner sur le dossier frontend à partir du projet: cd frontend
 
 
-Ensuite, installer les composants du projet. > npm install
+Ensuite, installer les composants du projet: npm install
 
 
-Enfin, démarrer ng serve pour avoir accès au serveur de développement. Rendez-vous sur http://localhost:4200/. > ng serve
+Enfin, démarrer ng serve pour avoir accès au serveur de développement. Rendez-vous sur http://localhost:4200/:  ng serve
 
 ## Backend ## 
 
-Installer nodejs et npm sur votre machine en local. Après, se positionner sur le dossier backend à partir du projet.
+Installer nodejs et npm sur votre machine en local. Après, se positionner sur le dossier backend à partir du projet: cd backend
 
-> cd backend
-Ensuite, installer les composants du projet.
+Ensuite, installer les composants du projet: npm install
 
-> npm install
-Enfin, lancer le projet avec nodemon serve
+Enfin, lancer le projet avec nodemon serve: nodemon serve
 
-> nodemon serve
 Le serveur sera accessible sur http://localhost:3000 par défaut.
 
